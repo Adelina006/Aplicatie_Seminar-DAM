@@ -1,6 +1,8 @@
 package com.example.aplicatie_seminar;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,10 @@ public class AddActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        String[] facultati = {"CSIE", "FABIZ", "REI", "MRK"};
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, facultati);
+        Spinner spinnerFacultati = findViewById(R.id.spinnerFacultate);
+        spinnerFacultati.setAdapter(adapter);
     }
 }

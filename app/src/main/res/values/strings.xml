@@ -5,4 +5,8 @@
     <string name="gbp">GBP:</string>
     <string name="xau">XAU:</string>
     <string name="afisare_curs_valutar">Afisare curs valutar</string>
+    <string name="introduceti_numele_studentului">Introduceti numele studentului</string>
+    <string name="introduceti_data_nasterii">Introduceti data nasterii</string>
+    <string name="introduceti_media">Introduceti media</string>
+    <string name="alegeti_facultatea">Alegeti facultatea:</string>
 </resources>

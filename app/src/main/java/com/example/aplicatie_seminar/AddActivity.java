@@ -51,6 +51,33 @@ public class AddActivity extends AppCompatActivity {
 
         Intent intent =  getIntent();
 
+        if(intent.hasExtra(MainActivity.EDIT_Student))
+        {
+            Student student = (Student) intent.getSerializableExtra(MainActivity.EDIT_Student);
+            etNume.setText(student.getNume());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+            etDataNasterii.setText(sdf.format(student.getDataNasterii()));
+            etMedie.setText(String.valueOf(student.getMedie()));
+            ArrayAdapter adapterSpinner = (ArrayAdapter) spinnerFacultati.getAdapter();
+            for(int i = 0; i < adapterSpinner.getCount(); i++)
+            {
+                if(adapterSpinner.getItem(i).equals(student.getFacultate()))
+                {
+                    spinnerFacultati.setSelection(i);
+                    break;
+                }
+            }
+            if(student.getAreBursa() == true)
+            {
+                radioGroup.check(R.id.radioButtonDA);
+            }
+            else {
+                radioGroup.check(R.id.radioButtonNU);
+            }
+
+        }
+
+
         buttonAdaugareStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

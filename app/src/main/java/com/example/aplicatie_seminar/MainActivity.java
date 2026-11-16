@@ -25,6 +25,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE_ADD = 100;
+    public static final int REQUEST_CODE_EDIT = 200;
+    public static final String EDIT_Student = "Student editat";
+    int poz;
     public ListView listViewStudentiMain;
     public List<Student> studenti = new ArrayList<>();
 
@@ -84,6 +87,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listViewStudentiMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                poz = position;
+              Student studentAux = studenti.get(position);
+              Intent intent = new Intent(getApplicationContext(), AddActivity.class);
+              intent.putExtra(EDIT_Student, studentAux);
+              startActivityForResult(intent, REQUEST_CODE_EDIT);
+
+            }
+        });
+
     }
 
     @Override
@@ -98,6 +113,21 @@ public class MainActivity extends AppCompatActivity {
                 ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, studenti);
                 listViewStudentiMain.setAdapter(adapter);
             }
+        }
+        if(requestCode == REQUEST_CODE_EDIT && resultCode == RESULT_OK && data != null)
+        {
+            Student student = (Student) data.getSerializableExtra(AddActivity.ADD_Student);
+            if(student != null)
+            {
+                studenti.get(poz).setNume(student.getNume());
+                studenti.get(poz).setDataNasterii(student.getDataNasterii());
+                studenti.get(poz).setMedie(student.getMedie());
+                studenti.get(poz).setFacultate(student.getFacultate());
+                studenti.get(poz).setAreBursa(student.getAreBursa());
+            }
+
+           ArrayAdapter<Student> adapter = (ArrayAdapter<Student>) listViewStudentiMain.getAdapter();
+            adapter.notifyDataSetChanged();
         }
     }
 }

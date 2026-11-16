@@ -118,6 +118,7 @@ public class AddActivity extends AppCompatActivity {
                                 Intent intentAfisare = new Intent(getApplicationContext(), AfisareActivity.class);
                                 intentAfisare.putExtra(ADD_Student, student);
                                 startActivity(intentAfisare);
+                                finish();
 
 
                             } catch (ParseException e) {

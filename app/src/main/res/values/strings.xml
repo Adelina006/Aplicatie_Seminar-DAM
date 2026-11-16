@@ -9,4 +9,8 @@
     <string name="introduceti_data_nasterii">Introduceti data nasterii</string>
     <string name="introduceti_media">Introduceti media</string>
     <string name="alegeti_facultatea">Alegeti facultatea:</string>
+    <string name="afisare_bnr">Afisare BNR</string>
+    <string name="extragere_date_din_xml">Extragere date din XML</string>
+    <string name="extragere_date_din_json">Extragere date din JSON</string>
+    <string name="extragere_date_din_csv">Extragere date din CSV</string>
 </resources>

@@ -30,7 +30,7 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize"></activity>
         <activity
-            android:name=".afisareActivity"
+            android:name=".AfisareActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

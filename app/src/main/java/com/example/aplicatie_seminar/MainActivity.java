@@ -3,6 +3,8 @@ package com.example.aplicatie_seminar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -10,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -129,5 +132,35 @@ public class MainActivity extends AppCompatActivity {
            ArrayAdapter<Student> adapter = (ArrayAdapter<Student>) listViewStudentiMain.getAdapter();
             adapter.notifyDataSetChanged();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.meniu_principal, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.optiunea1)
+        {
+            Intent intent = new Intent(getApplicationContext(), BNRActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.optiunea2)
+        {
+            return true;
+        }
+        else if (item.getItemId() == R.id.optiunea3)
+        {
+            return true;
+        }
+        else if (item.getItemId() == R.id.optiunea4)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

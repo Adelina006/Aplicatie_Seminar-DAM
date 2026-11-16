@@ -111,9 +111,13 @@ public class AddActivity extends AppCompatActivity {
                                 }
                                 Student student = new Student(nume, dataNasterii, medie, facultate, areBursa);
                                 //Toast.makeText(getApplicationContext(), student.toString(), Toast.LENGTH_LONG).show();
-                                intent.putExtra(ADD_Student, student);
-                                setResult(RESULT_OK, intent);
-                                finish();
+//                                intent.putExtra(ADD_Student, student);
+//                                setResult(RESULT_OK, intent);
+//                                finish();
+
+                                Intent intentAfisare = new Intent(getApplicationContext(), AfisareActivity.class);
+                                intentAfisare.putExtra(ADD_Student, student);
+                                startActivity(intentAfisare);
 
 
                             } catch (ParseException e) {

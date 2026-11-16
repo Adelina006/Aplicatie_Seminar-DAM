@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/optiunea1"
+        android:title="@string/afisare_bnr" />
+    <item
+        android:id="@+id/optiunea2"
+        android:title="@string/extragere_date_din_xml" />
+    <item
+        android:id="@+id/optiunea3"
+        android:title="@string/extragere_date_din_json" />
+    <item
+        android:id="@+id/optiunea4"
+        android:title="@string/extragere_date_din_csv" />
+</menu>
